@@ -4,7 +4,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class MessageToReturnToClient {
-	private boolean allSucced;
+	private boolean type;
 	private String message;
 	
 	

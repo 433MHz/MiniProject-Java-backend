@@ -18,8 +18,7 @@ public class RegisterRepository {
 	@PostMapping("addNewUser")
 	public MessageToReturnToClient register(@RequestBody LoginAndPasswordFromClient info) {
 		
-		addUserToDatabase.add(info);
-		
-		return null;
+		System.out.println(info.toString());
+		return 	addUserToDatabase.add(info);
 	}
 }
