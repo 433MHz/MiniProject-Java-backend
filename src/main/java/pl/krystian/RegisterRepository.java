@@ -22,7 +22,6 @@ public class RegisterRepository {
 	public MessageForClient register(@RequestBody DataFromClient info) {
 		
 		message = addUser.add(info);
-		System.out.println(message.getMessage() + " | " + message.isSucces());
-		return null;
+		return message;
 	}
 }

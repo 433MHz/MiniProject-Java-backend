@@ -3,6 +3,8 @@ package pl.krystian.RegisterClasses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import pl.krystian.Database.Database;
+
 @Component
 public class AddUserToDatabase extends CheckData{
 	
@@ -22,7 +24,7 @@ public class AddUserToDatabase extends CheckData{
 		else if(isPasswordTooLong(password)) option = 4;
 		else if(!arePasswordsSame(password, repeatedPassword)) option = 5;
 		else if(isLoginInDatabase(login)) option = 6;
-		else option = 7;
+		else if(database.addUser(data)) option = 7;
 		
 		
 		
@@ -46,7 +48,7 @@ public class AddUserToDatabase extends CheckData{
 			messageForClient.setAll("This login is occupied", false);
 			break;
 		case 7:
-			messageForClient.setAll("Nice", true);
+			messageForClient.setAll("User register succes", true);
 			break;
 			
 		default:
