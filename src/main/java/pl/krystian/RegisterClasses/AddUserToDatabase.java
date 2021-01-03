@@ -3,15 +3,13 @@ package pl.krystian.RegisterClasses;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import pl.krystian.Database.Database;
-
 @Component
 public class AddUserToDatabase extends CheckData{
 	
 	@Autowired
 	MessageForClient messageForClient;
 	
-	public MessageForClient add(DataFromClient data) {
+	public MessageForClient add(DataFromClientForRegister data) {
 		String login = data.getLogin();
 		String password = data.getPassword();
 		String repeatedPassword = data.getRepeatedPassword();

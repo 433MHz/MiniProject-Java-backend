@@ -2,12 +2,11 @@ package pl.krystian.RegisterClasses;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
-import pl.krystian.Database.Database;
 
 abstract class CheckData {
 	
 	@Autowired
-	Database database;
+	DatabaseRegister database;
 	
 	boolean isLoginTooLong(String login) {
 		if(login.length() > 64) return true;

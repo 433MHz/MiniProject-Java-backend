@@ -1,6 +1,6 @@
 package pl.krystian.RegisterClasses;
 
-public class DataFromClient {
+public class DataFromClientForRegister {
 	private String login;
 	private String password;
 	private String repeatedPassword;
