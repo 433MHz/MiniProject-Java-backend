@@ -30,4 +30,23 @@ class DatabaseLogin extends Database {
 			}catch(Exception e){ System.out.println(e);}  
 		return null;
 	}
+	
+	
+	
+	public boolean updateToken(String token, String login) {
+		boolean temp = false;
+		
+		try {
+			Class.forName(driver);  
+			Connection con=DriverManager.getConnection(url,username,password);  
+			
+			String query = "update users set token = ? where login = ?";
+			PreparedStatement stmt=con.prepareStatement(query);  
+			stmt.setString(1, token);
+			stmt.setString(2, login);
+			temp = stmt.execute();
+			con.close(); 
+			}catch(Exception e){ System.out.println(e);}  
+		return temp;
+	}
 }

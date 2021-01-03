@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 import pl.krystian.RegisterClasses.DataFromClientForRegister;
 import pl.krystian.LoginClasses.DataFromClientForLogin;
+import pl.krystian.LoginClasses.MessageAndToken;
 import pl.krystian.LoginClasses.UserToken;
 import pl.krystian.RegisterClasses.AddUserToDatabase;
 import pl.krystian.RegisterClasses.MessageForClient;
@@ -33,9 +34,8 @@ public class RegisterRepository {
 	
 	@CrossOrigin
 	@PostMapping("getUserToken")
-	public MessageForClient login(@RequestBody DataFromClientForLogin info) {
+	public MessageAndToken login(@RequestBody DataFromClientForLogin info) {
 		
-		userToken.get(info);
-		return null;
+		return userToken.get(info);
 	}
 }

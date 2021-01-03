@@ -14,7 +14,7 @@ public class UserToken{
 	MessageAndToken message;
 	
 	@Autowired
-	Token setToken;
+	Token token;
 	
 	public MessageAndToken get(DataFromClientForLogin data){
 		
@@ -24,11 +24,14 @@ public class UserToken{
 		
 		if(database.isLoginOccupied(login)) {
 			if(passwordFromUser.equals(passwordInDatabase)) {
-				System.out.println(setToken.generate());
+				String generatedToken = token.generate();
+				database.updateToken(generatedToken, login);
+				message.setAll("Logged in", true, generatedToken);
 			}
+			else message.setAll("Incorrect password", false, null);
 		}
-		else message.setMessage("Login is not registered");
+		else message.setAll("Login is not registered", false, null);;
 		
-		return null;
+		return message;
 	}
 }

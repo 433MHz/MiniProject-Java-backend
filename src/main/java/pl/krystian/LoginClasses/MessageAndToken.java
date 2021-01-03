@@ -5,7 +5,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MessageAndToken {
 	private String message;
-	private boolean success;
+	private boolean success = false;
 	private String token;
 	
 	
