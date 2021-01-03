@@ -1,15 +1,9 @@
 package pl.krystian.RegisterClasses;
 
-import org.springframework.stereotype.Component;
-
-@Component
-public class LoginAndPasswordFromClient {
+public class DataFromClient {
 	private String login;
 	private String password;
 	private String repeatedPassword;
-	
-	
-	
 	public String getLogin() {
 		return login;
 	}
@@ -28,5 +22,4 @@ public class LoginAndPasswordFromClient {
 	public void setRepeatedPassword(String repeatedPassword) {
 		this.repeatedPassword = repeatedPassword;
 	}
-	
 }

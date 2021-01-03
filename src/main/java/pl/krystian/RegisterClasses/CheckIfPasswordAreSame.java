@@ -1,5 +1,5 @@
 package pl.krystian.RegisterClasses;
 
-public class AddUserToDatabase {
+public class CheckIfPasswordAreSame {
 
 }
