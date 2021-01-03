@@ -22,7 +22,7 @@ public class AddUserToDatabase extends CheckData{
 		else if(isPasswordTooLong(password)) option = 4;
 		else if(!arePasswordsSame(password, repeatedPassword)) option = 5;
 		else if(isLoginInDatabase(login)) option = 6;
-		else ;
+		else option = 7;
 		
 		
 		
@@ -46,7 +46,7 @@ public class AddUserToDatabase extends CheckData{
 			messageForClient.setAll("This login is occupied", false);
 			break;
 		case 7:
-			messageForClient.setAll("", false);
+			messageForClient.setAll("Nice", true);
 			break;
 			
 		default:
