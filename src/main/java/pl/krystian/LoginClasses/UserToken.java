@@ -24,13 +24,11 @@ public class UserToken{
 		
 		if(database.isLoginOccupied(login)) {
 			if(passwordFromUser.equals(passwordInDatabase)) {
-				String generatedToken = token.generate();
-				database.updateToken(generatedToken, login);
-				message.setAll("Logged in", true, generatedToken);
+				message.setAll("Information added", true);
 			}
-			else message.setAll("Incorrect password", false, null);
+			else message.setAll("Incorrect password", false);
 		}
-		else message.setAll("Login is not registered", false, null);;
+		else message.setAll("Login is not registered", false);;
 		
 		return message;
 	}
