@@ -46,7 +46,7 @@ public class AddUserToDatabase extends CheckData{
 			messageForClient.setAll("This login is occupied", false);
 			break;
 		case 7:
-			messageForClient.setAll("User register succes", true);
+			messageForClient.setAll("User register success", true);
 			break;
 			
 		default:
