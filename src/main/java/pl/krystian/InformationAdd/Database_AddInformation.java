@@ -47,7 +47,7 @@ class Database_AddInformation extends Database {
 			Class.forName(driver);
 			Connection con = DriverManager.getConnection(url, username, password);
 
-			String query = "insert into content (login, Title, Content, Data, Time) values (?,?,?,?,?)";
+			String query = "insert into content (login, title, content, date, time) values (?,?,?,?,?)";
 			PreparedStatement stmt = con.prepareStatement(query);
 
 			stmt.setString(1, login);
