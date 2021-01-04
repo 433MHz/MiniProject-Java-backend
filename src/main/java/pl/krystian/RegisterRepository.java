@@ -5,37 +5,33 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import pl.krystian.RegisterClasses.DataFromClientForRegister;
-import pl.krystian.LoginClasses.DataFromClientForLogin;
-import pl.krystian.LoginClasses.MessageAndToken;
-import pl.krystian.LoginClasses.UserToken;
+
+import pl.krystian.InformationAdd.AddInformation;
+import pl.krystian.InformationAdd.MessageFromClient_AddInformation;
+import pl.krystian.InformationAdd.MessageFromServer_AddInformation;
 import pl.krystian.RegisterClasses.AddUserToDatabase;
-import pl.krystian.RegisterClasses.MessageForClient;
+import pl.krystian.RegisterClasses.DataFromClientForRegister;
+import pl.krystian.RegisterClasses.MessageForClientFromRegister;
 
 @RestController
 public class RegisterRepository {
 	
 	@Autowired
 	AddUserToDatabase addUser;
-	
+		
 	@Autowired
-	MessageForClient message;
+	AddInformation addInformation;
 	
-	@Autowired
-	UserToken userToken;
 	
 	@CrossOrigin
 	@PostMapping("addNewUser")
-	public MessageForClient register(@RequestBody DataFromClientForRegister info) {
-		
-		message = addUser.add(info);
-		return message;
+	public MessageForClientFromRegister register(@RequestBody DataFromClientForRegister info) {
+		return addUser.add(info);
 	}
 	
 	@CrossOrigin
-	@PostMapping("getUserToken")
-	public MessageAndToken login(@RequestBody DataFromClientForLogin info) {
-		
-		return userToken.get(info);
+	@PostMapping("sendInformation")
+	public MessageFromServer_AddInformation addInformation(@RequestBody MessageFromClient_AddInformation message) {
+		return addInformation.add(message);
 	}
 }
