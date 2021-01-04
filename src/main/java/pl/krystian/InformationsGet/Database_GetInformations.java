@@ -29,12 +29,12 @@ class Database_GetInformations extends Database {
 			ResultSet rs = stmt.executeQuery(query);
 			
 			while(rs.next()) {
+				message = new MessageFromClient_AddInformation();
 				message.setLogin(rs.getString("login"));
 				message.setTitle(rs.getString("title"));
 				message.setContent(rs.getString("content"));
 				message.setDate(rs.getString("date"));
 				message.setHour(rs.getString("time"));
-				
 				list.add(message);
 			}
 			
