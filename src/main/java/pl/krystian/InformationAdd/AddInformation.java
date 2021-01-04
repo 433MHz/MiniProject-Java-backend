@@ -21,16 +21,18 @@ public class AddInformation {
 		String title = fromClient.getTitle();
 		String content = fromClient.getContent();
 		int option;
+		
+		System.out.println(title);
 
 		if (!database.isLoginOccupied(login))
 			option = 1;
 		else if (!database.isLoginAndPasswordValid(login, password))
 			option = 2;
-		else if (title == null)
+		else if (title == null || title.isEmpty())
 			option = 3;
 		else if (title.length() > 30)
 			option = 4;
-		else if (content == null)
+		else if (content == null || content.isEmpty())
 			option = 5;
 		else if (content.length() > 500)
 			option = 6;
