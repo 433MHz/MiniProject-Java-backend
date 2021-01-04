@@ -1,11 +1,13 @@
-package pl.krystian.LoginClasses;
+package pl.krystian.InformationAdd;
 
 import org.springframework.stereotype.Component;
 
 @Component
-public class MessageAndToken {
+public class MessageFromServer_AddInformation {
 	private String message;
-	private boolean success;	
+	private boolean success;
+	
+	
 	
 	public String getMessage() {
 		return message;
@@ -17,10 +19,6 @@ public class MessageAndToken {
 		this.message = message;
 	}
 	void setSuccess(boolean success) {
-		this.success = success;
-	}
-	void setAll(String message, boolean success) {
-		this.message = message;
 		this.success = success;
 	}
 }

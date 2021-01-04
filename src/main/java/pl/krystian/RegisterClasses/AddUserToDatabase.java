@@ -7,9 +7,9 @@ import org.springframework.stereotype.Component;
 public class AddUserToDatabase extends CheckData{
 	
 	@Autowired
-	MessageForClient messageForClient;
+	MessageForClientFromRegister messageForClient;
 	
-	public MessageForClient add(DataFromClientForRegister data) {
+	public MessageForClientFromRegister add(DataFromClientForRegister data) {
 		String login = data.getLogin();
 		String password = data.getPassword();
 		String repeatedPassword = data.getRepeatedPassword();

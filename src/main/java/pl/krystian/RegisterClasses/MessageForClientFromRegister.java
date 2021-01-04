@@ -3,7 +3,7 @@ package pl.krystian.RegisterClasses;
 import org.springframework.stereotype.Component;
 
 @Component
-public class MessageForClient {
+public class MessageForClientFromRegister {
 	
 	private String message;
 	private boolean succes;
